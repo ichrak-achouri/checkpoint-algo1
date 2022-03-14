@@ -1,0 +1,32 @@
+ALGORITHM checkpoint algo 
+VAR
+ sentence:STRING;
+ length:INTEGER:=0;
+ nbr-words:INTEGER:=0;
+ nbr-vowels:INTEGER:=0;
+ i:INTEGER:=1;
+BEGIN
+    WHILE (sentence[i]<>".") DO
+        IF (sentence[i]=" ")
+           nbr-words=nbr-words+1;
+        END if 
+        
+        SWITCH (sentence[i]) DO
+          case "a"= nbr-vowels=nbr-vowels+1;
+          case "e"= nbr-vowels=nbr-vowels+1;
+          case "i"= nbr-vowels=nbr-vowels+1;
+          case "o"= nbr-vowels=nbr-vowels+1;
+          case "u"= nbr-vowels=nbr-vowels+1;
+          case "y"= nbr-vowels=nbr-vowels+1;
+          default 
+          write("sorry no vowels");
+          
+        END_SWITCH
+        i=i+1;
+    END_WHILE
+   length:=i;
+    writeln ("le nombre de voyelle est" , nbr-vowels);
+    writeln ("le nombre des mots est ", nbr-words);
+    writeln ("la longueur est" ,length);
+    
+END
